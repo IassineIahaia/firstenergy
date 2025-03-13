@@ -29,3 +29,11 @@
         @extend %focus-properties;
     }
 }
+
+.btn-blue{
+    background-color: $color-darkblue;
+    @extend %control-properties;
+    &:hover{
+        background-color: $color-orange;
+    }
+}
