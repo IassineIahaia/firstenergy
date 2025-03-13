@@ -11,7 +11,7 @@
         left: 0;
         width: 100%;
         height: 12px;
-        background-color: #FD4D01;
+        background-color: $color-orange;
         z-index: 2;
     }
 }
@@ -69,6 +69,17 @@
 
 // Services
 .services{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
     .btn-container{
         text-align: center;
         @include grid-column-span(4);
@@ -122,5 +133,41 @@
         margin: 35px;
         font-size: 26px;
         font-weight: normal;
+    }
+}
+// cta
+
+.cta{
+    position: relative;
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+}
+.cta-text{
+    align-self: center;
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(5);
+    }
+    .btn{
+        background-color: $color-darkblue;
+        &:hover{
+            background-color: $color-orange;
+        }
+    }
+}
+.cta-image{
+    @include grid-column-span(4);
+    min-height: 490px;
+    @include breakpoint-tablet{
+        @include grid-column-start(7);
+        @include grid-column-span(5);
     }
 }
