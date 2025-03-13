@@ -171,3 +171,78 @@
         @include grid-column-span(5);
     }
 }
+// header-image
+.header-image{
+    position: relative;
+    min-height: 300px;
+    @include breakpoint-tablet{
+        min-height: 430px;
+    }
+    &:before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $color-orange;
+        z-index: 2;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, $color-black, $color-white);
+        opacity: 0.5;
+        mix-blend-mode: multiply;
+        z-index: 1;
+    }
+}
+.header-text{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 30px;
+    @include breakpoint-tablet{
+        padding-bottom: 45px;
+    }
+    .wrapper{
+            row-gap: 0;            
+        h1{
+            color: $color-white;
+            @include grid-column-start(1);
+            @include grid-column-span(4);
+            @include breakpoint-tablet{
+                @include grid-column-start(1);
+                @include grid-column-span(7);
+            }
+        }
+    }
+}
+
+// Mission Vision
+.mission-vision{
+    background-color: #E4E4E4;
+}
+
+.mission-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-span(5);
+    }
+}
+.vision-text{
+    @include grid-column-span(4);
+    @include breakpoint-tablet{
+        @include grid-column-start(7);
+        @include grid-column-span(5);
+    }
+}
